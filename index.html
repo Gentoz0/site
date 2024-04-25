@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Дневник учащихся</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body style= "background: #a6a1a1; background-image: url('fon.jpg')">
+    <nav>
+        <ul>
+            <li><a href="#upload">Загрузка оценок</a></li>
+            <li><a href="#edit-section">Редактирование журнала</a></li>
+            <li><a href="#table-stats">Статистика (таблица)</a></li>
+            <li><a href="#graph-stats">Статистика (графики)</a></li>
+            <li><a href="#help">Помощь</a></li>
+            <li><a href="#about">О разработчике</a></li>
+        </ul>
+    </nav>
+
+    
+    <section id="upload" class="content-section">
+        <h2>Загрузить оценки</h2>
+        <input type="file" id="file-input" accept=".csv, .txt" style="display: none;">
+        <button id="upload-button">Загрузить файл</button>
+        <button id="download-data-button">Скачать файл</button>
+
+        <div id="data-preview">
+            <!-- Сюда будет вставлена таблица с данными -->
+        </div>
+    </section>
+    
+    <section id="edit-section" class="content-section" style="display: none;">
+        <h2>Добавить/Редактировать ученика</h2>
+        <form id="student-form">
+            <input type="text" id="student-name" placeholder="ФИО ученика" required>
+            <input type="text" id="student-class" placeholder="Класс" required>
+            <input type="number" id="grade-informatics" placeholder="Оценка по информатике" min="1" max="5">
+            <input type="number" id="grade-physics" placeholder="Оценка по физике" min="1" max="5">
+            <input type="number" id="grade-math" placeholder="Оценка по математике" min="1" max="5">
+            <input type="number" id="grade-literature" placeholder="Оценка по литературе" min="1" max="5">
+            <input type="number" id="grade-music" placeholder="Оценка по музыке" min="1" max="5">
+            <button type="button" onclick="addOrUpdateStudent()">Сохранить</button>
+        </form>
+    </section>
+    
+
+
+    <section id="table-stats" class="content-section" style="display: none;">
+        <h2>Статистика (таблица)</h2>
+        <!-- Место для таблицы со статистикой -->
+    </section>
+
+    <section id="graph-stats" class="content-section" style="display: none;">
+        <h2>Статистика в графиках</h2>
+        <div id="charts">
+            <canvas id="class-chart" width="400" height="200"></canvas> <!-- Элемент для отображения графика. облатсь для рисования-->
+            <canvas id="student-chart" width="400" height="200"></canvas>
+        </div>
+    </section>
+
+    <section id="help" class="content-section" style="display: none;">
+            <h2>Помощь</h2>
+            <p>Электронный дневник предлагает следующие функции, распределенные по вкладкам:</p>
+            
+            <h3>Загрузка оценок</h3>
+            <p>На этой вкладке вы можете загрузить файлы с оценками в форматах .csv или .txt. Для начала загрузки нажмите на кнопку "Загрузить файл". После выбора файла он будет автоматически обработан и отображен в виде таблицы на странице.</p>
+            
+            <h3>Редактирование журнала</h3>
+            <p>Эта вкладка позволяет добавлять и изменять записи оценок учеников. Для добавления или редактирования информации заполните форму данными ученика и нажмите кнопку "Сохранить".</p>
+            
+            <h3>Статистика (таблица)</h3>
+            <p>В этом разделе вы можете увидеть статистику по классам и предметам: средний балл, медиану оценок, количество и процентное распределение оценок по каждому предмету.</p>
+            
+            <h3>Статистика (график)</h3>
+            <p>Здесь представлена статистика в графическом виде. Графики могут помочь вам лучше визуализировать распределение оценок и успеваемость учеников.</p>
+            
+            <h5>О разработчике</h5>
+            <p>На этой вкладке содержится информация о создателях электронного дневника, их контактные данные и другие сведения о проекте.</p>
+        </section>
+        
+    </section>
+
+    <section id="about" class="content-section" style="display: none;">
+        <h2>О разработчике</h2>
+        <!-- Информация о разработчике -->
+        <p>ФИО разработчика: Лях Максим Борисович</p> <p>  </p>
+        <p>Контактные данные: 88005553535 </p> 
+        <p> Ссылка на сайт <a href="">  </a> </p>
+        <p> ВК <a href="https://vk.com/makslyah"> https://vk.com/makslyah  </a> </p>
+        <img src="pudg.jpg" alt="Фото разработчика">
+        
+    </section>
+
+</body>
+</html>
